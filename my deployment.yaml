@@ -1,0 +1,76 @@
+- name: Deploy Suite for STIMIO
+  gather_facts: no
+  hosts: localhost
+  vars:
+    cluster_file_storage_class: ocs-storagecluster-cephfs
+    cluster_block_storage_class: ocs-storagecluster-ceph-rbd
+
+    mas_instance_id: stimio
+    mas_config_dir: "{{playbook_dir}}/config"
+    mas_channel: 8.7.x
+    mas_entitlement_key: "{{ lookup('env', 'IBM_ENTITLEMENT_KEY') }}"
+    mas_config_scope: wsapp
+    mas_workspace_id: main
+    mas_workspace_name: Main STIMIO workspace
+    mas_app_id: manage
+    mas_app_channel: 8.3.x
+    mas_app_ws_spec:
+      bindings:
+        jdbc: system
+      settings:
+        db:
+          dbSchema: maximo
+          maxinst:
+            demodata: true
+            bypassUpgradeVersionCheck: true
+            db2Vargraphic: true
+            indexSpace: maxindex
+            tableSpace: maxdata
+      components:
+        base:
+          version: latest
+    sls_entitlement_key: "{{ lookup('env', 'IBM_ENTITLEMENT_KEY') }}"
+    sls_namespace: "mas-{{mas_instance_id}}-sls"
+    sls_mongodb_cfg_file: "{{mas_config_dir}}/mongo-mas-mongo.yml"
+    bootstrap:
+        license_id: "10005a442267"
+        license_file: "{{mas_config_dir}}/entitlement.lic"
+
+    db2_instance_name: "{{ mas_instance_id }}-db2u-manage"
+    db2_namespace: db2u
+    db2_version: "{{ lookup('env', 'DB2_VERSION') | default('11.5.7.0-cn2', true)}}"
+    entitlement_key: "{{ lookup('env', 'IBM_ENTITLEMENT_KEY') }}"
+    db2_meta_storage_class: "{{cluster_file_storage_class}}"
+    db2_data_storage_class: "{{cluster_file_storage_class}}"
+    db2_backup_storage_class: "{{cluster_file_storage_class}}"
+    db2_logs_storage_class:  "{{cluster_block_storage_class}}"
+    db2_temp_storage_class:  "{{cluster_block_storage_class}}"
+
+    uds_event_scheduler_frequency: '@daily'
+    uds_contact:
+      email: jean-philippe.alexandre@fr.ibm.com
+      first_name: Jean-Philippe
+      last_name: Alexandre
+    uds_storage_class: "{{cluster_file_storage_class}}"
+    prometheus_storage_class: "{{cluster_block_storage_class}}"
+    prometheus_alletmgr_storage_class: "{{cluster_file_storage_class}}"
+
+    mongodb_namespace: "mas-mongo"
+    mongodb_storage_class: "{{cluster_block_storage_class}}"
+
+  roles:
+    - ibm.mas_devops.sbo
+    - ibm.mas_devops.ibm_catalogs
+    - ibm.mas_devops.common_services
+    - ibm.mas_devops.cert_manager
+    - ibm.mas_devops.mongodb
+    - ibm.mas_devops.uds
+    - ibm.mas_devops.sls
+    - ibm.mas_devops.db2
+    - ibm.mas_devops.suite_db2_setup_for_manage
+    - ibm.mas_devops.gencfg_workspace
+    - ibm.mas_devops.suite_install
+    - ibm.mas_devops.suite_config
+    - ibm.mas_devops.suite_verify
+    - ibm.mas_devops.suite_app_install
+    - ibm.mas_devops.suite_app_config
