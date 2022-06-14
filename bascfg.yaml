@@ -1,0 +1,129 @@
+apiVersion: config.mas.ibm.com/v1
+kind: BasCfg
+metadata:
+  name: stimio-bas-system
+ 
+  namespace: mas-stimio-core
+  ownerReferences:
+    - apiVersion: core.mas.ibm.com/v1
+      kind: Suite
+      name: stimio
+      uid: 2dee0c59-df3a-4de7-82ce-67be7278bb27
+  labels:
+    mas.ibm.com/configScope: system
+    mas.ibm.com/instanceId: stimio
+spec:
+  certificates:
+    - alias: part1
+      crt: |
+        -----BEGIN CERTIFICATE-----
+        MIIGRzCCBS+gAwIBAgISA693Lp0ST/0DHqnRJho2UXQmMA0GCSqGSIb3DQEBCwUA
+        MDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQD
+        EwJSMzAeFw0yMjA1MjAxMTM2MjJaFw0yMjA4MTgxMTM2MjFaMEUxQzBBBgNVBAMT
+        Oml0enJva3MtMjcwMDA0czQ5YS1xNHlmdzYuZXUtZGUuY29udGFpbmVycy5hcHBk
+        b21haW4uY2xvdWQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCnmru7
+        A7xzNKtznWUKwIV6gqcRqHCgtAPO6ZHHJcIafMO7Hm+OnINg5IAi4UyHnB+KA0BV
+        n2ElsPzUvHHuZX6y1a2jOhDMin3c5f3RxeSvKwPX4N5gt8n6lU3cAXJjMflyk/VA
+        bATVFpBW0yoffnp5cHokUKq3FwgNl5MV80ymwobNY8wlS8xLqcWk9+d1xg96/5ba
+        0OqXO3B+zMBpHWHxrW5omX+MtWfzN8l3Ynq2OtjuhlMyx9leU3XiyuCaUqdNyKRZ
+        iEJZgHKhk2PNPQ64icOrVhFvIe0psQh/HSVMEiYfe1fWui6LE5c/sax3g7eRKw8g
+        0pKTz5Qhekq34ZrdAgMBAAGjggNCMIIDPjAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0l
+        BBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQCMAAwHQYDVR0OBBYE
+        FOYmpAXD+/SncffmOfr4on2Rdwv1MB8GA1UdIwQYMBaAFBQusxe3WFbLrlAJQOYf
+        r52LFMLGMFUGCCsGAQUFBwEBBEkwRzAhBggrBgEFBQcwAYYVaHR0cDovL3IzLm8u
+        bGVuY3Iub3JnMCIGCCsGAQUFBzAChhZodHRwOi8vcjMuaS5sZW5jci5vcmcvMIIB
+        DwYDVR0RBIIBBjCCAQKCYiouaXR6cm9rcy0yNzAwMDRzNDlhLXE0eWZ3Ni02Y2Nk
+        N2YzNzhhZTgxOTU1M2QzN2Q1ZjJlZTE0MmJkNi0wMDAwLmV1LWRlLmNvbnRhaW5l
+        cnMuYXBwZG9tYWluLmNsb3VkgmBpdHpyb2tzLTI3MDAwNHM0OWEtcTR5Znc2LTZj
+        Y2Q3ZjM3OGFlODE5NTUzZDM3ZDVmMmVlMTQyYmQ2LTAwMDAuZXUtZGUuY29udGFp
+        bmVycy5hcHBkb21haW4uY2xvdWSCOml0enJva3MtMjcwMDA0czQ5YS1xNHlmdzYu
+        ZXUtZGUuY29udGFpbmVycy5hcHBkb21haW4uY2xvdWQwTAYDVR0gBEUwQzAIBgZn
+        gQwBAgEwNwYLKwYBBAGC3xMBAQEwKDAmBggrBgEFBQcCARYaaHR0cDovL2Nwcy5s
+        ZXRzZW5jcnlwdC5vcmcwggEFBgorBgEEAdZ5AgQCBIH2BIHzAPEAdwDfpV6raIJP
+        H2yt7rhfTj5a6s2iEqRqXo47EsAgRFwqcwAAAYDheAyvAAAEAwBIMEYCIQDx3lfJ
+        MtNfi9bU0E/1rLSnkbKbGubFVYQMxH2FZj8Z6gIhAMvtVTxptTowqZcuTtBkoKix
+        GR+VrgWPh0bTQYJKKksCAHYARqVV63X6kSAwtaKJafTzfREsQXS+/Um4havy/HD+
+        bUcAAAGA4XgM1wAABAMARzBFAiBhQYyfxqBGwq4TfLyr9HoZDXe8rL0SGPCwmw8G
+        4rZ99wIhAIG61purxWauk58ueIsFOZuWfjK/Pa6UdCNnkpCs+30wMA0GCSqGSIb3
+        DQEBCwUAA4IBAQCId0ZGU4oKXgZ2FZMWHvi7YOjdPIcdlXlnDpslYdbkpGEy+I3r
+        lQY1qMA9yoGDpYBM5rOJMhPBdyuR1Xmaa0hrraTV9NCg/c/WkMRizgZM4NysAa7L
+        rfuzc9iSGKf8wHMj+nBouJjX32I+G2wEWnRTDszYX6PpDtkvEyOBpgCrlhKi3cEn
+        aIIzWakdp/0DNfHKvzEOUsfQLyahCez995lltg9fzwYxb5WYrnd8cYOfGpGjG8sI
+        6olLncScWHJkmErx3adjkAXN+4WkYBiuueZKPaaYWilygxXc1FFp9ne1gxCYDau6
+        5Zv5+4vBBKx4jInRzE3Wxh7vzsAs0c/Ko8ns
+        -----END CERTIFICATE-----
+    - alias: part2
+      crt: |
+        -----BEGIN CERTIFICATE-----
+        MIIFFjCCAv6gAwIBAgIRAJErCErPDBinU/bWLiWnX1owDQYJKoZIhvcNAQELBQAw
+        TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+        cmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwHhcNMjAwOTA0MDAwMDAw
+        WhcNMjUwOTE1MTYwMDAwWjAyMQswCQYDVQQGEwJVUzEWMBQGA1UEChMNTGV0J3Mg
+        RW5jcnlwdDELMAkGA1UEAxMCUjMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+        AoIBAQC7AhUozPaglNMPEuyNVZLD+ILxmaZ6QoinXSaqtSu5xUyxr45r+XXIo9cP
+        R5QUVTVXjJ6oojkZ9YI8QqlObvU7wy7bjcCwXPNZOOftz2nwWgsbvsCUJCWH+jdx
+        sxPnHKzhm+/b5DtFUkWWqcFTzjTIUu61ru2P3mBw4qVUq7ZtDpelQDRrK9O8Zutm
+        NHz6a4uPVymZ+DAXXbpyb/uBxa3Shlg9F8fnCbvxK/eG3MHacV3URuPMrSXBiLxg
+        Z3Vms/EY96Jc5lP/Ooi2R6X/ExjqmAl3P51T+c8B5fWmcBcUr2Ok/5mzk53cU6cG
+        /kiFHaFpriV1uxPMUgP17VGhi9sVAgMBAAGjggEIMIIBBDAOBgNVHQ8BAf8EBAMC
+        AYYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMBIGA1UdEwEB/wQIMAYB
+        Af8CAQAwHQYDVR0OBBYEFBQusxe3WFbLrlAJQOYfr52LFMLGMB8GA1UdIwQYMBaA
+        FHm0WeZ7tuXkAXOACIjIGlj26ZtuMDIGCCsGAQUFBwEBBCYwJDAiBggrBgEFBQcw
+        AoYWaHR0cDovL3gxLmkubGVuY3Iub3JnLzAnBgNVHR8EIDAeMBygGqAYhhZodHRw
+        Oi8veDEuYy5sZW5jci5vcmcvMCIGA1UdIAQbMBkwCAYGZ4EMAQIBMA0GCysGAQQB
+        gt8TAQEBMA0GCSqGSIb3DQEBCwUAA4ICAQCFyk5HPqP3hUSFvNVneLKYY611TR6W
+        PTNlclQtgaDqw+34IL9fzLdwALduO/ZelN7kIJ+m74uyA+eitRY8kc607TkC53wl
+        ikfmZW4/RvTZ8M6UK+5UzhK8jCdLuMGYL6KvzXGRSgi3yLgjewQtCPkIVz6D2QQz
+        CkcheAmCJ8MqyJu5zlzyZMjAvnnAT45tRAxekrsu94sQ4egdRCnbWSDtY7kh+BIm
+        lJNXoB1lBMEKIq4QDUOXoRgffuDghje1WrG9ML+Hbisq/yFOGwXD9RiX8F6sw6W4
+        avAuvDszue5L3sz85K+EC4Y/wFVDNvZo4TYXao6Z0f+lQKc0t8DQYzk1OXVu8rp2
+        yJMC6alLbBfODALZvYH7n7do1AZls4I9d1P4jnkDrQoxB3UqQ9hVl3LEKQ73xF1O
+        yK5GhDDX8oVfGKF5u+decIsH4YaTw7mP3GFxJSqv3+0lUFJoi5Lc5da149p90Ids
+        hCExroL1+7mryIkXPeFM5TgO9r0rvZaBFOvV2z0gp35Z0+L4WPlbuEjN/lxPFin+
+        HlUjr8gRsI3qfJOQFy/9rKIJR0Y/8Omwt/8oTWgy1mdeHmmjk7j1nYsvC9JSQ6Zv
+        MldlTTKB3zhThV1+XWYp6rjd5JW1zbVWEkLNxE7GJThEUG3szgBVGP7pSWTUTsqX
+        nLRbwHOoq7hHwg==
+        -----END CERTIFICATE-----
+    - alias: part3
+      crt: |
+        -----BEGIN CERTIFICATE-----
+        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
+        -----END CERTIFICATE-----
+  config:
+    contact:
+      email: jean-philippe.alexandre@fr.ibm.com
+      firstName: Jean-Philippe
+      lastName: Alexandre
+    credentials:
+      secretName: uds-apikey
+    url: >-
+      https://uds-endpoint-ibm-common-services.itzroks-270004s49a-q4yfw6-6ccd7f378ae819553d37d5f2ee142bd6-0000.eu-de.containers.appdomain.cloud
+  displayName: UDS
