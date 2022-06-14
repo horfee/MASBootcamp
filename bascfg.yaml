@@ -123,7 +123,7 @@ spec:
       firstName: Jean-Philippe
       lastName: Alexandre
     credentials:
-      secretName: uds-apikey
+      secretName: L9EmTdCNhAKvbslpbc7luCwyoLDnQeLj5sqH8Q7KepeMPProDZGnhhnORrwRyQW4
     url: >-
       https://uds-endpoint-ibm-common-services.itzroks-270004s49a-q4yfw6-6ccd7f378ae819553d37d5f2ee142bd6-0000.eu-de.containers.appdomain.cloud
   displayName: UDS
